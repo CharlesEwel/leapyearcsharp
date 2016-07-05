@@ -34,6 +34,15 @@ namespace LeapYear
         string queenOutput = "The queen may " + may + "attack that space.";
         return View["index.cshtml", queenOutput];
       };
+      Post["/ClockAngle/created"] =_=> {
+        ClockAngle newClockAngle = new ClockAngle();
+        double newAngle = newClockAngle.CalculateAngle(
+                                                        Request.Form["hour"],
+                                                        Request.Form["minute"]
+        );
+        return View["index.cshtml", newAngle];
+
+      };
     }
   }
 }
