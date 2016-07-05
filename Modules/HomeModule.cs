@@ -54,9 +54,12 @@ namespace LeapYear
         List<string> AnagramList = newAnagram.IsAnagram(Request.Form["compareWord"], inputWords);
         string outputString = string.Join(", ", AnagramList);
         return View["index.cshtml", outputString];
-
-
-
+      };
+      Post["/Allergies/created"] =_=> {
+        Allergy newAllergy = new Allergy();
+        List<string> AllergyList = newAllergy.ListAllergies(Request.Form["AllergyScore"]);
+        string outputString = string.Join(", ", AllergyList);
+        return View["index.cshtml", outputString];
       };
     }
   }

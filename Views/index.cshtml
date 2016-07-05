@@ -70,6 +70,25 @@
       <input class = "form-control"  id="number-of-testWords" name= "number-of-testWords"  type="number" required="true" value=1>
     </form>
 
+    <h2>Allergy test. How miserable is your life?</h2>
+    <h4>Allergy Chart</h4>
+    <ul>
+      <li>Eggs: 1</li>
+      <li>Peanuts: 2</li>
+      <li>shellfish: 4</li>
+      <li>strawberries: 8</li>
+      <li>tomatoes: 16</li>
+      <li>chocolate: 32</li>
+      <li>pollen: 64</li>
+      <li>cats: 128</li>
+    </ul>
+    <form action="/Allergies/created" method="post">
+      <div id="allergies" class = "form-group">
+        <label for="AllergyScore">Enter the sum of your Allergies:</label>
+        <input class = "form-control"  id="AllergyScore" name="AllergyScore" type="number" required="true" title="Please fill in the form">
+      </div>
+      <button type="submit"  class="btn btn-default center-block" >Submit</button>
+    </form>
     <p>
       Output:
       @Model
