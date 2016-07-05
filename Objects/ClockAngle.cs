@@ -16,7 +16,6 @@ namespace LeapYear.Objects
       {
         return Math.Abs(((30* (hour+(minute/60)))-(6*minute)))%180;
       }
-
     }
   }
 }

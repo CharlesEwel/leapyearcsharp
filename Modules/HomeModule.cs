@@ -1,6 +1,7 @@
 using Nancy;
 using LeapYear.Objects;
 using System.Collections.Generic;
+using System;
 
 namespace LeapYear
 {
@@ -41,6 +42,20 @@ namespace LeapYear
                                                         Request.Form["minute"]
         );
         return View["index.cshtml", newAngle];
+
+      };
+      Post["/Anagram/created"] =_=> {
+        Anagram newAnagram = new Anagram();
+        List<string> inputWords = new List<string>{};
+        for(int i = 0; i<Request.Form["number-of-testWords"]; i++)
+        {
+          inputWords.Add(Request.Form["testWord"+i]);
+        }
+        List<string> AnagramList = newAnagram.IsAnagram(Request.Form["compareWord"], inputWords);
+        string outputString = string.Join(", ", AnagramList);
+        return View["index.cshtml", outputString];
+
+
 
       };
     }
